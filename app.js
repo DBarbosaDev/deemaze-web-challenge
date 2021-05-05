@@ -33,6 +33,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan(configs.RUNNING_MODE));
 app.use(mongoSanitize());
 
+app.use(express.static('frontend'));
+
 app.use('/api', routes);
 
 app.use((req, res) => {
