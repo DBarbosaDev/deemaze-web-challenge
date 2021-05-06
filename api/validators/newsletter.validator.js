@@ -1,6 +1,6 @@
 const { body, validationResult } = require('express-validator');
 
-const { expressResponsesKit, VALIDATORS_CONSTANTS } = require('../framework');
+const { expressResponsesKit, VALIDATORS_CONSTANTS, ERROR_CODES_CONSTANTS } = require('../framework');
 
 const NEWSLETTER_VALIDATIONS = VALIDATORS_CONSTANTS.NEWSLETTER_VALIDATIONS;
 
@@ -22,7 +22,7 @@ const validateSubscriptionParams = () => {
     const validationsSeries = [
         body('email')
             .isEmail()
-            .withMessage(NEWSLETTER_VALIDATIONS.EMAIL.INVALID.ERROR_CODE)
+            .withMessage(ERROR_CODES_CONSTANTS.INVALID_EMAIL)
             .isLength({ max: NEWSLETTER_VALIDATIONS.EMAIL.MAX_SIZE.VALUE })
             .withMessage(NEWSLETTER_VALIDATIONS.EMAIL.MAX_SIZE.ERROR_CODE)
     ];

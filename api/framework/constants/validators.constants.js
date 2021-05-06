@@ -6,10 +6,16 @@ module.exports = {
             MAX_SIZE: {
                 VALUE: 100,
                 ERROR_CODE: ERROR_CODES_CONSTANTS.EMAIL_MAX_SIZE_EXCEEDED
-            },
-            INVALID: {
-                ERROR_CODE: ERROR_CODES_CONSTANTS.INVALID_EMAIL
             }
+        }
+    },
+    RESTAURANT_VALIDATIONS: {
+        NAME: {
+            MAX_SIZE: {
+                VALUE: 100,
+                ERROR_CODE: ERROR_CODES_CONSTANTS.NAME_MAX_SIZE_EXCEEDED
+            },
+            REQUIRED_ERROR: ERROR_CODES_CONSTANTS.NAME_REQUIRED
         }
     }
 };

@@ -6,11 +6,8 @@ const RestaurantMenuModelSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    specialities: {
-        type: Array,
-        required: true
-    },
-    menuDay: {
+    specialities: [String],
+    day: {
         type: Date,
         required: true
     },
@@ -23,7 +20,9 @@ const RestaurantMenuModelSchema = new mongoose.Schema({
 
 const RestaurantMenuModel = mongoose.model('RestaurantMenuModel', RestaurantMenuModelSchema);
 
-const createRestaurantMenu = (name, specialities, menuDay) => RestaurantMenuModel.create({ name, specialities, menuDay });
+const createRestaurantMenu = (name, specialities, day) => {
+    return RestaurantMenuModel.create({ name, day, specialities });
+};
 
 module.exports = {
     createRestaurantMenu

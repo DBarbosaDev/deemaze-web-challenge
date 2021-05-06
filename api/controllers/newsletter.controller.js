@@ -11,8 +11,8 @@ const subscribe = async (req, res) => {
         return expressResponsesKit.sendSuccessResponse(res, 201);
     }
     catch (error) {
-        return expressResponsesKit.sendInternalServerError(
-            res, { stack: error, message: error.message }
+        return expressResponsesKit.sendErrorResponse(
+            res, 500, { stack: error, message: error.message }
         );
     }
 };
