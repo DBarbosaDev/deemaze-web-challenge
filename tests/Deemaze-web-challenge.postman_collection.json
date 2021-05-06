@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "e15bcb67-dc0b-401d-8998-5939da38978a",
+		"name": "Deemaze-web-challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Newsletter Subscription",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "sdasd2@sdasd.asd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/newsletter/subscribe",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"newsletter",
+						"subscribe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Restaurant daily menu",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "d",
+							"type": "text"
+						},
+						{
+							"key": "day",
+							"value": "2020-10-12",
+							"type": "text"
+						},
+						{
+							"key": "specialities",
+							"value": "[\"torta\" , \"pizza\", \"2\"]",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/restaurant/daily_menu",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"restaurant",
+						"daily_menu"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
