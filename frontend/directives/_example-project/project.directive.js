@@ -1,5 +1,5 @@
 (function () {
-    angular.module('TaskifyApp').directive('ifyProject', () => {
+    angular.module('WebApp').directive('ifyProject', () => {
         return {
             templateUrl: './directives/project/project.template.html',
             link: ifyProject,

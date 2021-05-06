@@ -1,0 +1,34 @@
+
+<div layout="column" flex="100" layout-align="center center" layout-fill>
+    <div layout="row" flex="100" layout-wrap layout-align="center center">
+        <div class="box rounded" flex="100" flex-gt-xs="75" layout-wrap> 
+            <div class="title-container" layout="row" flex="100" layout-align="center center">
+                <h1 class="title">Restaurant Newsletter</h1>
+            </div>
+    
+            <div class="description">
+                <p>Subscribe to our newsletter to get daily specialities of our best restaurants right in your mailbox.</p>
+            </div>        
+        
+            <form flex="100" layout="row" name="subscriptionForm" ng-submit="HomeCtrl.onSubscribe()">
+                <div class="input-group" ng-if="!HomeCtrl.waitingForResponse" ng-if="!HomeCtrl.waitingForResponse">
+                    <input type="text" class="form-control" ng-model="HomeCtrl.form.email" placeholder="Email" aria-label="Email">
+                    <div class="input-group-append">
+                        <div class="input-group-text no-padding">
+                            <md-button type="submit" flex="none" class="md-raised btn-primary no-margin">Subscribe</md-button>
+                        </div>
+                    </div>
+                </div>
+                <div flex="100" ng-if="HomeCtrl.waitingForResponse">
+                    <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+                </div>
+            </form>    
+        </div>
+    </div>
+
+    <div layout="column" flex="none" layout-align="center end">
+        <div class="description">
+            <p>Are you a restaurant owner? <a ui-sref="restaurant" href="/restaurant/">Click here</a> to add your daily specialties.</p>
+        </div>
+    </div>
+</div>

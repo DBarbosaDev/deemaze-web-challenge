@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
 const mongoSanitize = require('express-mongo-sanitize');
+const path = require('path');
 
 const configs = require('./configs');
 const routes = require('./api/routes');
@@ -32,7 +33,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan(configs.RUNNING_MODE));
 app.use(mongoSanitize());
 
-app.use(express.static('frontend'));
+app.use(express.static(path.join(__dirname, '/frontend')));
 
 app.use('/api', routes);
 
