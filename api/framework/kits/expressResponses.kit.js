@@ -1,11 +1,11 @@
 const sendResponse = (expressResponse, statusCode, details = {}) => {
     const { data, error } = details;
-    const { code, message } = error || {};
+    const { code, codes, message } = error || {};
 
     const responseObject = {
         success: !error,
         status: statusCode,
-        error: error ? { code, message } : undefined,
+        error: error ? { code, codes, message } : undefined,
         data
     };
 
