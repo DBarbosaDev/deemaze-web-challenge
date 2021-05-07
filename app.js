@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const mongoose = require('mongoose');
 const mongoSanitize = require('express-mongo-sanitize');
 const path = require('path');
+const CronJob = require('cron').CronJob;
 
 const configs = require('./configs');
 const routes = require('./api/routes');
