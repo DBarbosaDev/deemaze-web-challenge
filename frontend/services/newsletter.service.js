@@ -1,7 +1,7 @@
 (function () {
-    angular.module('WebApp').service('SubscriptionService', SubscriptionService);
+    angular.module('WebApp').service('NewsletterService', NewsletterService);
 
-    function SubscriptionService(HttpService) {
+    function NewsletterService(HttpService) {
         this.subscribe = (body) => {
             return HttpService.post('/newsletter/subscribe', body);
         };

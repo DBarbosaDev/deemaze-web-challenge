@@ -1,7 +1,7 @@
 (function () {
     angular.module('WebApp').controller('HomeController', HomeController);
 
-    function HomeController(SubscriptionService, UtilsService, $location) {
+    function HomeController(NewsletterService, UtilsService, $location) {
         const self = this;
 
         self.waitingForResponse = false;
@@ -10,8 +10,8 @@
         self.onSubscribe = () => {
             self.waitingForResponse = true;
 
-            SubscriptionService.subscribe({ email: self.form.email })
-                .then(() => $location.path('/confirmation'))
+            NewsletterService.subscribe({ email: self.form.email })
+                .then(() => $location.path('/confirmation/'))
                 .catch((response) => {
                     const error = response.data.error;
                     if (error.code) {

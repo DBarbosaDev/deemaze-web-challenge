@@ -2,6 +2,8 @@
 <html ng-app="WebApp">
     <head>
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+        <script src="node_modules/moment/min/moment.min.js"></script>
         <script src="node_modules/angular/angular.min.js"></script>
 
         <script src="node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
@@ -24,16 +26,20 @@
         <script src="app.js"></script>
         <script src="app.theme.js"></script>
         <script src="app.routes.js"></script>
-        
 
         <!-- Services -->
         <script src="services/http.service.js"></script>
         <script src="services/utils.service.js"></script>
-        <script src="views/home/subscription.service.js"></script>
+        <script src="services/newsletter.service.js"></script>
+        <script src="services/restaurants.service.js"></script>
 
         <!-- Controllers -->
         <script src="views/home/home.controller.js"></script>
         <script src="views/confirmation/confirmation.controller.js"></script>
+        <script src="views/specialties/specialties.controller.js"></script>
+
+        <!-- Directives -->
+        <script src="directives/wa-footer/waFooter.directive.js"></script>
 
     </head>
     <body>

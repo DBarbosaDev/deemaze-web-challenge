@@ -10,25 +10,24 @@
                 <p>Subscribe to our newsletter to get daily specialities of our best restaurants right in your mailbox.</p>
             </div>        
         
-            <form flex="100" layout="row" name="subscriptionForm" ng-submit="HomeCtrl.onSubscribe()">
-                <div class="input-group" ng-if="!HomeCtrl.waitingForResponse" ng-if="!HomeCtrl.waitingForResponse">
+            <form flex="100" layout="row" name="subscriptionForm" ng-submit="HomeCtrl.onSubscribe()"
+                ng-if="!HomeCtrl.waitingForResponse">
+                <div class="input-group">
                     <input type="text" class="form-control" ng-model="HomeCtrl.form.email" placeholder="Email" aria-label="Email">
                     <div class="input-group-append">
                         <div class="input-group-text no-padding">
-                            <md-button type="submit" flex="none" class="md-raised btn-primary no-margin">Subscribe</md-button>
+                            <md-button type="submit" flex="none" class="md-raised md-primary no-margin">Subscribe</md-button>
                         </div>
                     </div>
                 </div>
-                <div flex="100" ng-if="HomeCtrl.waitingForResponse">
-                    <md-progress-linear md-mode="indeterminate"></md-progress-linear>
-                </div>
-            </form>    
+            </form>
+            <div flex="100" ng-if="HomeCtrl.waitingForResponse">
+                <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+            </div>
         </div>
     </div>
 
     <div layout="column" flex="none" layout-align="center end">
-        <div class="footer">
-            <p>Are you a restaurant owner? <a ui-sref="restaurant" href="/restaurant/">Click here</a> to add your daily specialties.</p>
-        </div>
+       <wa-footer></wa-footer>
     </div>
 </div>

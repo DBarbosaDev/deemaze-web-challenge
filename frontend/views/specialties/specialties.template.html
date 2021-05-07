@@ -1,0 +1,51 @@
+
+<div layout="column" flex="100" layout-align="center center" layout-fill>
+    <div layout="row" flex="100" layout-wrap layout-align="center center" layout-fill>
+        <md-content class="box rounded" layout="column" flex-xs="100"> 
+            <div class="title-container">
+                <h1 class="title">Your specialties</h1>
+            </div>
+    
+            <div class="description">
+                <p>Add your information and daily specialties.</p>
+            </div>
+           
+            <form name="subscriptionForm" layout="column" layout-align="center center"
+                ng-submit="SpecialtiesCtrl.onFormSubmit()" ng-if="!SpecialtiesCtrl.waitingForResponse">
+
+                <div class="field-group" layout-align="center center">
+                    <h5 flex="100">Date</h5>
+                    <div class="input-group" layout="row">
+                        <input type="date" class="form-control" ng-model="SpecialtiesCtrl.form.day" placeholder="Date" aria-label="Date" md-hide-icons="all">
+                    </div>
+                </div>
+
+                <div class="field-group"layout-align="center center">
+                    <h5 flex="100">Restaurant Name</h5>
+                    <div class="input-group" layout="row" flex="100">
+                        <input flex="none" type="text" class="form-control" ng-model="SpecialtiesCtrl.form.name" placeholder="Name" aria-label="Name">
+                    </div>
+                </div>
+                
+                <div class="field-group no-margin" layout-align="center center">
+                    <h5 flex="100">Specialties</h5>
+                    <div class="input-group margin-b-16" layout="row" flex="100" layout-wrap
+                        ng-repeat="specialty in SpecialtiesCtrl.specialtiesList">
+                        <input type="text" ng-model="specialty.value" class="form-control" placeholder="Specialty" aria-label="Specialty">
+                    </div>
+                </div>
+                
+                <div layout="column">
+                    <md-button class="md-secondary margin-b-48" ng-click="SpecialtiesCtrl.addSpecialty()">Add More</md-button>
+                    <md-button class="md-primary" type="submit">Submit</md-button>
+                    <md-button class="md-primary-no-bg" ng-click="SpecialtiesCtrl.cancel()">Cancel</md-button>
+                </div>
+                
+            </form>
+
+            <div flex="100" ng-if="SpecialtiesCtrl.waitingForResponse">
+                <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+            </div>
+        </md-content>
+    </div>
+</div>

@@ -11,16 +11,19 @@
                 controllerAs: 'HomeCtrl'
             })
             .state('confirmation', {
-                url: '/confirmation',
+                url: '/confirmation/:menu_day',
                 templateUrl: './views/confirmation/confirmation.template.html',
                 controller: 'ConfirmationController',
                 controllerAs: 'ConfirmationCtrl'
             })
             .state('restaurant', {
-                url: '/restaurant',
-                templateUrl: '',
-                controller: '',
-                controllerAs: ''
+                url: '/restaurant'
+            })
+            .state('restaurant.specialties', {
+                url: '/specialties',
+                templateUrl: './views/specialties/specialties.template.html',
+                controller: 'SpecialtiesController',
+                controllerAs: 'SpecialtiesCtrl'
             });
     }
 }());
